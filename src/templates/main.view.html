@@ -1,0 +1,33 @@
+<!--  main.view.html -->
+<h1> Bienvenue </h1>
+
+<section>
+	<div class="col-xs-2">
+		<ul class="list-group">
+			Liste des utilisateurs
+			<div ng-repeat ="user in users">
+				<li class="list-group-item">{{main.user.firstname}}</li>
+			</div>	
+		</ul>
+	</div>
+	<div class="col-xs-6">
+		<h2> Chat </h2>
+		<div style="height:400px; width:100%;overflow:auto;"  >
+    		<p ng-repeat="message in main.messages">
+    			> {{message.message}}
+    		</p>
+		</div>
+
+		<input type="text" class="form-control" placeholder="Quel est ton message ?" ng-model="main.newMessage">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" 
+                        type="submit" ng-click="main.sendMessage()">
+                        Send
+                    </button>
+                </span>
+      </div>
+	</div>
+
+
+
+</section>
